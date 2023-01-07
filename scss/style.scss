@@ -1,0 +1,389 @@
+$primary-color: #8257E6;
+$secondary-color: #fcfcfc;
+$terciary-color: #c0c0c0;
+$bg-color: #13131F;
+$second-bg: #0d0d13;
+$hover: #7142dd;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $secondary-color;
+    background: $bg-color;
+    font-family: monospace;
+}
+
+a {
+    transition: all 0.3s ease-in-out;
+}
+
+main,
+footer {
+    max-width: 100%;
+    height: 100%;
+}
+
+section {
+    max-width: 100%;
+    height: 100%;
+    padding: 4rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5.5rem;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+}
+
+.about,
+.contact {
+    background: $second-bg;
+}
+
+.js-scroll {
+    opacity: 0;
+    transition: translate3d(-30px, 0, 0);
+    transition: .3s;
+}
+
+.js-scroll.ativo {
+    opacity: 1;
+    transition: translate3d(0, 0, 0);
+}
+
+/*nav*/
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: $bg-color;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0 3.5rem;
+    height: 9vh;
+    border-bottom: 1px solid $primary-color;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+}
+
+.menu li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: $hover;
+    color: $hover;
+    transform-origin: bottom right;
+    transition: transform 0.45s ease-out;
+  }
+  
+  .menu li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+.nav-link {
+    font-size: 1.2rem;
+    color: $secondary-color;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3 ease-in-out;
+    transition: all 0.3 ease-in-out;
+    background: $secondary-color;
+}
+
+/*hero*/
+
+.hero {
+    height: 100vh;
+}
+
+.flex img {
+    max-width: 300px;
+}
+
+.flex h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.flex h2 {
+    font-size: 1.5rem;
+    color: $terciary-color;
+    font-weight: 400;
+}
+
+.flex h1 span {
+    color: $primary-color;
+}
+
+.flex h3 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/*about*/
+
+.about-img {
+    max-width: 350px;
+    border-radius: 30% 70% 50% 50% / 30% 30% 70% 70% ;
+    background-color: #7142dd;
+}
+
+.about-text {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.about-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-link {
+    color: $secondary-color;
+    padding: 1rem;
+    background: $primary-color;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.about-link:hover {
+    background: $hover;
+}
+
+/*portfolio*/
+
+.portfolio article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    height: 100%;
+    border: 2px solid $primary-color;
+    gap: 20px;
+}
+
+.portfolio article h5 {
+    font-size: 1.2rem;
+}
+
+.port-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.port-links a {
+    color: $secondary-color;
+}
+
+.port-links a:hover {
+    color: $hover;
+}
+
+/*contact*/
+
+.contact h4 {
+    text-align: center;
+}
+
+.contact a {
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.contact a i {
+    font-size: 2rem;
+}
+
+.contact a:hover {
+    color: $hover;
+    transform: scale(1.1);
+}
+
+.contact-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    column-gap: 3rem;
+}
+
+/*footer*/
+
+footer {
+    padding: 2rem;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+.footer-flex article {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-flex article h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/*media*/
+
+@media (max-width: 800px) {
+
+    .flex {
+        text-align: start;
+        gap: 20px;
+    }
+
+    .flex h1 {
+        font-size: 1.5rem;
+    }
+
+    .flex h2 {
+        font-size: 1.2rem;
+    }
+
+    .flex h3 {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(45deg);
+    }
+
+    .menu {
+        position: fixed;
+        left: -500px;
+        top: 50px;
+        gap: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background: $bg-color;
+        width: 100%;
+        transition: 0.3s;
+        height: 100vh;
+    }
+
+    menu li {
+        margin: 16px 0;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .flex {
+        text-align: center;
+        gap: 20px;
+    }
+
+    .flex h1 {
+        font-size: 2rem;
+    }
+
+    .flex h2 {
+        font-size: 1.2rem;
+    }
+
+    .flex h3 {
+        font-size: 1rem;
+    }
+
+}
